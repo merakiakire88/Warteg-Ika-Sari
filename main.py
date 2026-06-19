@@ -1,18 +1,17 @@
 import streamlit as st
 
 # --- CONFIG UTAMA WEB ---
-st.set_page_config(page_title="Toko Online Saya", page_icon="🛍️", layout="centered")
+st.set_page_config(page_title="Warteg Ika Sari", layout="centered")
 
 # --- 1. DEFINISIKAN HALAMAN-HALAMAN ---
 # Halaman yang bisa dilihat oleh SEMUA ORANG (Pelanggan)
 halaman_pelanggan = [
-    st.Page("views/dashboard.py", title="Katalog Produk", icon="🏠", default=True),
-    st.Page("views/keranjang.py", title="Keranjang Belanja", icon="🛒"),
+    st.Page("views/app.py", title="Warteg Ika Sari", default=True),
 ]
 
 # Halaman yang HANYA BISA dilihat oleh Admin
 halaman_admin = [
-    st.Page("admin_views/admin_panel.py", title="Panel Kontrol Admin", icon="🔒")
+    st.Page("admin_views/admin.py", title="Panel Kontrol Admin", icon="🔒")
 ]
 
 # --- 2. LOGIKAL PENYEMBUNYIAN HALAMAN ---
