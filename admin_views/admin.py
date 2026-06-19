@@ -2,27 +2,9 @@ import streamlit as st
 import json
 import os
 
+from utils.utils import update_status_json, baca_pesanan_json
+
 st.set_page_config(page_title="Dashboard Admin - Cafe Order", layout="wide")
-
-def baca_pesanan_json():
-    if os.path.exists("pesanan.json"):
-        with open("pesanan.json", "r") as file:
-            try:
-                data = json.load(file)
-                if isinstance(data, list):
-                    return data
-                elif isinstance(data, dict):
-                    return [data]
-            except json.JSONDecodeError:
-                return []
-    return []
-
-def update_status_json(index_pesanan, status_baru):
-    daftar_pesanan = baca_pesanan_json()
-    if daftar_pesanan and index_pesanan < len(daftar_pesanan):
-        daftar_pesanan[index_pesanan]["status"] = status_baru
-        with open("pesanan.json", "w") as file:
-            json.dump(daftar_pesanan, file, indent=4)
 
 st.title("👨‍💻 Dashboard Admin & Dapur")
 st.write("Pantau pesanan masuk dan perbarui status pengerjaan secara real-time.")
@@ -30,7 +12,7 @@ st.divider()
 
 password_input = st.text_input("Masukkan Password Admin:", type="password")
 
-if password_input == "admin123": # Ganti dengan password pilihanmu
+if password_input == "admin123":
     st.success("Akses Diterima!")
     st.write("### Daftar Pesanan Masuk Saat Ini:")
 
