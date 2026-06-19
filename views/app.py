@@ -1,13 +1,13 @@
 from datetime import datetime
 import streamlit as st
-from css import inject_custom_css
-from utils import get_menu
-from ambil import render_halaman_ambil
-from antar import render_halaman_antar
-from bayar import render_halaman_bayar
-from status import render_halaman_monitoring
+from utils.css import inject_custom_css
+from utils.utils import get_menu
+from views.ambil import render_halaman_ambil
+from views.antar import render_halaman_antar
+from views.bayar import render_halaman_bayar
+from views.status import render_halaman_monitoring
 
-st.set_page_config(page_title=" Warteg Ika Sari", layout="centered")
+st.set_page_config(page_title="Warteg Ika Sari", layout="centered")
 inject_custom_css()
 
 jam_sekarang = datetime.now().hour
