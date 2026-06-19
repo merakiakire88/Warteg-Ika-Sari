@@ -1,6 +1,6 @@
 import streamlit as st
-from utils import baca_status_json, baca_pesanan_json
-from css import generate_struk_html
+from utils.utils import baca_status_json, baca_pesanan_json
+from utils.css import generate_struk_html
 
 def render_halaman_monitoring(MENU_ITEMS):
     st.title("⏳ Monitoring Pesanan Anda")
