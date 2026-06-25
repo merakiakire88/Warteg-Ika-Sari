@@ -10,12 +10,6 @@ from views.status import render_halaman_monitoring
 st.set_page_config(page_title="Warteg Ika Sari", layout="centered")
 inject_custom_css()
 
-jam_sekarang = datetime.now().hour
-if jam_sekarang >= 22:
-    st.warning("🌙 Mohon maaf, warteg kami sudah tutup.")
-    st.error("Kami melayani pesanan hingga pukul 22.00 WIB. Silakan datang kembali esok hari!")
-    st.stop()
-
 excel_menu = get_menu()
 if excel_menu is not None:
     MENU_ITEMS = excel_menu
